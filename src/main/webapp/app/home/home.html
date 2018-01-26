@@ -1,0 +1,217 @@
+<div class="row">
+    <div class="col-md-6">
+        <label class="control-label">From</label>
+        <div class=" input-group">
+            <input type="text" class="form-control"
+                   uib-datepicker-popup="dd/MMM/yyyy"
+                   is-open="vm.popup1opened" ng-required="false"
+                   close-text="Close" ng-model="fromDate" aria-describedby="calender1" ng-change="select(StartDateVal)"/>
+
+            <span class="input-group-addon" id="calender1" ng-click="vm.popup1opened = !vm.popup1opened">
+            <i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <label class="control-label">To</label>
+        <div class=" input-group">
+            <input type="text" class="form-control"
+                   uib-datepicker-popup="dd/MMM/yyyy"
+                   is-open="vm.popup2opened" ng-required="false"
+                   close-text="Close" ng-model="toDate" aria-describedby="calender1"/>
+
+            <span class="input-group-addon" id="calender2" ng-click="vm.popup2opened = !vm.popup2opened">
+                        <i class="glyphicon glyphicon-calendar"></i></span>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="form-group col-md-4">
+        <label class="control-label">Commodity</label>
+        <select  ng-options="c as c.name  for c in commodity" class="form-control" ng-model="selectedCommodity">
+            <option value=""></option>
+
+        </select>
+    </div>
+
+
+    <div class="form-group col-md-4">
+        <label class="control-label">Port</label>
+        <select ng-options="p as p.name  for p in portData"  class="form-control" ng-model="selectedPort">
+            <option value=""></option>
+        </select>
+    </div>
+
+
+    <div class="form-group col-md-4">
+        <label class="control-label">Interval</label>
+        <select class="form-control" ng-model="interval"  ng-change="getDiff()">
+            <option value="Week">Week</option>
+            <option value="Month">Month</option>
+        </select>
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class="form-group col-md-2">
+        <span></span>
+        <button class="btn btn-default" type="button" ng-click="">OK</button>
+        <span><a href="{{downloadUrl()}}" >Download Data</a></span>
+    </div>
+
+
+</div>
+
+
+<div class="row">
+
+    <div class="form-group col-xs-6">
+        <plotly plotly-data="data" plotly-layout="lineLayout"></plotly>
+    </div>
+
+    <div class="form-group col-xs-6">
+        <plotly plotly-data="pie" plotly-layout="layout"></plotly>
+    </div>
+
+</div>
+
+<div class="row" >
+
+    <!--
+
+    <div class="form-group col-xs-6" ng-show="finalResult.length > 0">
+        <table class="table table-striped">
+
+            <thead>
+            <tr>
+
+                <td>Loading Port</td>
+                <td> Last {{interval}} in Millions</td>
+                <td>MOM +/-</td>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr ng-repeat="res in finalResult">
+
+                <td>{{ res.port }}</td>
+                <td >{{ res.last | number:2 }}</td>
+                <td ng-class="{'plus' : res.difference>=0, 'minus' : res.difference<0}">
+                    {{ res.difference | number:2}}
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+ -->
+
+    <div class="row">
+
+        <div class="form-group col-xs-6" ng-show="finalResult.length > 0">
+
+            <table class="table table-striped">
+
+                <thead>
+                <tr>
+
+                    <td>Value</td>
+                    <td>MOM +/-</td>
+                    <td>Week/Month</td>
+                </tr>
+                </thead>
+
+                <tr>
+                    <td>1.58</td>
+                    <td>-0.02</td>
+                    <td>Feb 2016</td>
+
+                </tr>
+
+                <tr>
+                    <td>1.09</td>
+                    <td>-0.5</td>
+                    <td>Apr 2016</td>
+
+                </tr>
+
+                <tr>
+                    <td>0.04</td>
+                    <td> 0.0</td>
+                    <td>Jan 2016</td>
+
+                </tr>
+
+                <tr>
+                    <td>0.32</td>
+                    <td>0.02</td>
+                    <td>Sep 2016</td>
+
+                </tr>
+
+                <tr>
+                    <td>0.90</td>
+                    <td>-0.03</td>
+                    <td>Nov 2016</td>
+
+                </tr>
+
+                <tr>
+                    <td>1.43</td>
+                    <td>-0.32</td>
+                    <td>Feb 2016</td>
+
+                </tr>
+                <tr>
+                    <td>0.87</td>
+                    <td>0.05</td>
+                    <td>Feb 2016</td>
+
+                </tr>
+                <tr>
+                    <td>1.23</td>
+                    <td>-0.24</td>
+                    <td>Feb 2017</td>
+
+                </tr>
+                <tr>
+                    <td>1.68</td>
+                    <td>0.21</td>
+                    <td>Apr 2016</td>
+
+                </tr>
+                <tr>
+                    <td>0.89</td>
+                    <td>-0.03</td>
+                    <td>Jan 2016</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+
+    <div class="form-group col-xs-6">
+
+        <plotly plotly-data="choroplethData" plotly-layout="layout"></plotly>
+
+    </div>
+
+</div>
+
+
+</div>
+
+

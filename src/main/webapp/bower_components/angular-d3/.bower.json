@@ -1,0 +1,32 @@
+{
+  "name": "angular-d3",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gdi2290/angular-d3",
+  "authors": [
+    "gdi2290 <github@gdi2290.com>"
+  ],
+  "main": "angular-d3.js",
+  "description": "Providing the method $off for $rootScope in Angular.js",
+  "ignore": [
+    "**/.*",
+    "*.yml",
+    "*.xml",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0"
+  },
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.1",
+    "commit": "bbd7323a0327fbd8cebbbdb3653e9f213e783d8c"
+  },
+  "_source": "https://github.com/gdi2290/angular-d3.git",
+  "_target": "^0.0.1",
+  "_originalSource": "angular.d3",
+  "_direct": true
+}

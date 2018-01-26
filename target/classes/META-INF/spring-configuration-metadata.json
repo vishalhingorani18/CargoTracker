@@ -1,0 +1,9 @@
+{
+  "groups": [{
+    "name": "application",
+    "sourceType": "com.marcura.cargotracker.config.ApplicationProperties",
+    "type": "com.marcura.cargotracker.config.ApplicationProperties"
+  }],
+  "hints": [],
+  "properties": []
+}
